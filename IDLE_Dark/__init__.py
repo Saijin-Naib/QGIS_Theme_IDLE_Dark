@@ -1,5 +1,5 @@
 # -----------------------------------------------------------
-# Copyright (C) 2020 Nyall Dawson
+# Copyright (C) 2020 Saijin_Naib
 # -----------------------------------------------------------
 # Licensed under the terms of GNU GPL 2
 #
@@ -18,13 +18,13 @@ from qgis.PyQt.QtGui import QColor
 
 
 def classFactory(iface):
-    return SynthwaveSchemePlugin(iface)
+    return IDLEDarkSchemePlugin(iface)
 
 
-class SynthwaveColorScheme(QgsCodeEditorColorScheme):
+class IDLEDarkColorScheme(QgsCodeEditorColorScheme):
     COLORS = {
-        QgsCodeEditorColorScheme.ColorRole.Default: QColor("#ffffff"),
-        QgsCodeEditorColorScheme.ColorRole.Keyword: QColor("#fede5d"),
+        QgsCodeEditorColorScheme.ColorRole.Default: QColor("#FFFFFF"),
+        QgsCodeEditorColorScheme.ColorRole.Keyword: QColor("#FF8000"),
         QgsCodeEditorColorScheme.ColorRole.Class: QColor("#da4b1b"),
         QgsCodeEditorColorScheme.ColorRole.Method: QColor("#b5f0ef"),
         QgsCodeEditorColorScheme.ColorRole.Decoration: QColor("#6C71C4"),
@@ -32,7 +32,7 @@ class SynthwaveColorScheme(QgsCodeEditorColorScheme):
         QgsCodeEditorColorScheme.ColorRole.Comment: QColor("#848bbd"),
         QgsCodeEditorColorScheme.ColorRole.CommentLine: QColor("#848bbd"),
         QgsCodeEditorColorScheme.ColorRole.CommentBlock: QColor("#848bbd"),
-        QgsCodeEditorColorScheme.ColorRole.Background: QColor("#292239"),
+        QgsCodeEditorColorScheme.ColorRole.Background: QColor("#002240"),
         QgsCodeEditorColorScheme.ColorRole.Cursor: QColor("#d1f5f5"),
         QgsCodeEditorColorScheme.ColorRole.CaretLine: QColor("#433465"),
         QgsCodeEditorColorScheme.ColorRole.Operator: QColor("#eee4b9"),
@@ -57,18 +57,18 @@ class SynthwaveColorScheme(QgsCodeEditorColorScheme):
     }
 
     def __init__(self):
-        super().__init__('synthwave', 'Synthwave')
+        super().__init__('idledark', 'IDLE Dark')
 
         for role, color in self.COLORS.items():
             self.setColor(role, color)
 
 
-class SynthwaveSchemePlugin:
+class IDLEDarkSchemePlugin:
     def __init__(self, _):
-        QgsGui.codeEditorColorSchemeRegistry().addColorScheme(SynthwaveColorScheme())
+        QgsGui.codeEditorColorSchemeRegistry().addColorScheme(IDLEDarkColorScheme())
 
     def initGui(self):
         pass
 
     def unload(self):
-        QgsGui.codeEditorColorSchemeRegistry().removeColorScheme('synthwave')
+        QgsGui.codeEditorColorSchemeRegistry().removeColorScheme('idledark')

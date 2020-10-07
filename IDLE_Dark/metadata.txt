@@ -1,0 +1,10 @@
+[general]
+name=IDLE Dark Code Editor Color Scheme
+description=IDLE Dark color scheme for QGIS code editors. Originally developed for the IDLE Python IDE.
+about=IDLE Dark color scheme for QGIS code editors. Originally developed for the IDLE Python IDE.
+version=1.1
+qgisMinimumVersion=3.15
+author=Saijin_Naib
+email=
+repository=https://github.com/Saijin-Naib/QGIS_Theme_IDLE_Dark
+tracker=https://github.com/Saijin-Naib/QGIS_Theme_IDLE_Dark
